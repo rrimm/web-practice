@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+
+<head>
+<style>
+div.first {
+	border: 3px solid #FF6A00;
+}
+
+div.second {
+	border: 3px solid #FFE4E1;
+}
+/* 주어진 영역 내 첫번째 요소를 가리킴 */
+p:first-of-type {
+	color: red;
+	font-weight: bold;
+}
+</style>
+</head><body>
+	<h1>first-of-type 이용한 선택</h1>
+
+	<div class="first">
+		<p>이 p 태그는 div 태그의 child 요소 중에서 첫번째로 등장하는 p 태그입니다!</p>
+		<p>이 p 태그는 div 태그의 child 입니다!</p>
+		<p>이 p 태그는 div 태그의 child 입니다!</p>
+		<div class="second">
+			<p>이 p 태그는 div 태그의 child 요소 중에서 첫번째로 등장하는 p 태그입니다!</p>
+			<p>이 p 태그는 div 태그의 child 입니다!</p>
+			<p>이 p 태그는 div 태그의 child 입니다!</p>
+		</div>
+</body>
+</html>

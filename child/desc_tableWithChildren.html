@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Selector Basic</title>
+<style>
+/* 적용되려면 table tr th */
+table>tr>th {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<!-- table에는 tbody가 적용되므로 되도록 자손선택자 사용 지양 -->
+	<table border="1">
+		<tr>
+			<th>이름</th>
+			<th>지역</th>
+		</tr>
+		<tr>
+			<td>윤인성</td>
+			<td>서울특별시 강서구 내발산동</td>
+		</tr>
+	</table>
+
+</body>
+</html>

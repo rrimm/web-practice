@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 Selector Basic</title>
+<style>
+#header {
+	width: 800px;
+/* 	margin: 여백(표기방법 - top, bottom, left, right) 또는 margin-top:0;식 또는 margin: top bottom 표기 */
+	margin: 0auto;
+	background: red;
+}
+
+#wrap {
+	width: 800px;
+	margin: 0auto;
+/* 	아래의 wrap 요소가 width 800px를 넘어가면 숨김 */
+	overflow: hidden;
+}
+
+#aside {
+	width: 200px;
+/* 	float이 aside, content 모두 left이므로 body부분에서 먼저 언급된 aside가 우선으로 배치 */
+	float: left;
+	background: blue;
+}
+
+#content {
+	width: 600px;
+	float: left;
+	background: green;
+}
+</style>
+</head>
+<body>
+<!-- 타이틀 부여하는 부분 -->
+	<div id="header">
+		<h1>#header 태그</h1>
+	</div>
+	<div id="wrap">
+<!-- 	측면 -->
+		<div id="aside">
+			<h1>#aside 태그</h1>
+		</div>
+<!-- 		본문 -->
+		<div id="content">
+			<h1>#content 태그</h1>
+		</div>
+	</div>
+</body>
+</html>

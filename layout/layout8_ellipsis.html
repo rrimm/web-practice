@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ellipsis</title>
+<style>
+h1, p {
+	width: 300px;
+}
+
+.ellipsis {
+	white-space: nowrap;	/* 자동줄바꿈 안함 */
+	overflow: hidden;
+	text-overflow: ellipsis;	/* overflow되는 부분에 대해 줄임말로 표현ㅍ*/
+}
+</style>
+</head>
+<body>
+<!-- 너비가 제한되어 있을 때 ellipsis 활용하여 줄임말형태로 표현 -->
+	<h1 class="ellipsis">Lorem ipsum dolor sit amet, consectetur
+		adipiscing elit.</h1>
+	<p class="ellipsis">Lorem ipsum dolor sit amet, consectetur
+		adipiscing elit.</p>
+</body>
+</html>

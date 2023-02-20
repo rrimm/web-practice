@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+<head>
+<style>
+body {
+	text-align: center;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	margin: auto;
+}
+
+.tooltip .tooltip-content {
+	visibility: hidden;
+	width: 220px;
+	background-color: #E0FFFF;
+	padding: 0;
+	color: white;
+	text-align: center;
+	position: absolute;
+	z-index: 1;
+	top: -60px;
+	right: 10%;
+}
+
+.tooltip:hover .tooltip-content {
+	visibility: visible;
+}
+</style>
+</head>
+<body>
+	<h1>툴팁이 나타나는 위치 설정</h1>
+	<br>
+
+	<div class="tooltip">
+		<span>여기에 마우스를 올려보세요!</span>
+		<div class="tooltip-content">
+			<p>왼쪽 상단에 나타나는 툴팁!</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

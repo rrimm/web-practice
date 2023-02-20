@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.font_size {
+	font-size: small;
+}
+
+.font_italic {
+	font-style: italic;
+}
+
+.font_bold {
+	font-weight: normal;
+}
+
+.font_center {
+	text-align: center;
+}
+
+fieldset {
+
+	border-width: normal;
+	border-style: solid;
+	border-color: #05CA7C;
+	display: block;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: white;
+}
+
+.container {
+	border: none;
+	width: 500px;
+	height: 600px;
+}
+
+.box {
+	border-width: normal;
+	border-style: initial;
+	border-color: none;
+	display: block;
+	margin: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	background-color: #F5FFDC;
+	border-radius: 10px;
+}
+body{
+font-family: NanumSquareNeo-Variable;
+}
+.plus {
+	border-width: normal;
+	border-style: groove;
+	border-color: F1FEC7;
+	/*             width: 500px; */
+	background-color: #BAFBF1;
+}
+
+.button {
+	margin-top: -60px;
+	width: 80px;
+	height: 40px;
+	background-color: #F1FEC7;
+	border: 1px solid #FFFFFF;
+	border-radius: 30px;
+	display: block;
+	left: 190px; text-decoration : none;
+	position: relative;
+	text-decoration: none;
+}
+
+.button>a {
+	display: block;
+	line-height: 36px;
+	text-decoration: none;
+}
+
+h2 {
+	text-align: center;
+	color: black;
+	background: #03C6B8;
+	width: 490px;
+	margin-left: 5px;
+}
+</style>
+</head>
+<body>
+
+<h2>회원가입</h2>
+<div class="container">
+
+<fieldset>
+
+
+		<div class="box" >
+		<div href="#" class="font_family">아이디</div>
+		<input type="text" size="25" maxlength="10" minlength="6"
+			style= "ime-mode: inactive" placeholder="영문, 숫자 사용. 10자 미만" required autofocus>
+		</div>
+		<div class="box" >
+		<div>비밀번호</div>
+		<input type="password" name="password" maxlength="10"
+			minlength="6" size="25" style="ime-mode: inactive"
+			placeholder="영문, 숫자 사용. 10자 미만" required>
+		</div>
+		<div class="box" >
+		<div>비밀번호 확인</div>
+		<input type="password" name="password" maxlength="10" minlength="6"
+			size="25" style="ime-mode: inactive" required>
+		</div>
+		<div class="box" >
+		<div>이름</div>
+		<input type="text" name="text" size="15" /> 
+		</div>
+		<div class="box" >
+		<div>나이</div>
+		<input type="number" name="points" min="0" max="100" step="1">
+		</div>
+		<div class="box" >
+		<div>생일</div>
+		<input type="date" name="bdaytime">
+		</div>
+		<div class="box" >
+		<div>이메일 주소</div>
+		<input type="text" name="text" size="10"> @ <select>
+					<option>메일주소선택</option>
+					<option>naver.com</option>
+					</select>
+			</div>		
+		<div class="box" >
+		<div>핸드폰</div>
+		<input type="text" name="text" size="15" /><br>
+			</div>
+
+	</fieldset>
+	
+	<fieldset>
+	
+		<p > 직업 <input type="text" name="text" size="15" list="jobList"/>
+		<datalist id="jobList">
+			<option value="회사원"></option>
+			<option value="교사"></option>
+			<option value="프로그래머"></option>
+			<option value="기타"></option>
+		</datalist></p> 
+		 <p >오피스 활용능력 <input type="range" name="points" min="0" max="10"></p> 
+		
+	</fieldset>
+
+</div>
+	<div class="button">
+		<!-- 앵커태그 -->
+        <a href="#" class="font_size font_italic font_bold font_center">register</a>
+    </div>
+
+</body>
+</html>

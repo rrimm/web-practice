@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 Float</title>
+<style>
+.left {
+	width: 150px;
+	height: 50px;
+	float: left;
+	background-color: green;
+}
+
+.right {
+	width: 150px;
+	height: 50px;
+	float: right;
+	background-color: #9932CC;
+}
+/* 하위요소가 float의 영향을 받지 않으려면 */
+p {
+	clear: both;
+}
+</style>
+</head>
+<body>
+
+	<h1>clear 속성을 이용한 위치 조정</h1>
+	<div>
+		<div class="left">왼쪽 끝에 위치하고 싶은 요소</div>
+		<div class="right">오른쪽 끝에 위치하고 싶은 요소</div>
+	</div>
+	<p>글자를 아래쪽에 출력하고싶음</p>
+
+</body>
+</html>

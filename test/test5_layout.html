@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Syntax</title>
+<style>
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	float: left;
+	width: 100px;
+}
+
+li a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	border: 1px black;
+	background: #CECDF9;
+	padding: 13px;
+	color: white;
+}
+
+div {
+	display: none;
+	position: absolute;
+	
+	width:100px;
+	
+}
+
+div a {
+	
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	border: 1px black;
+	background: #CECDF9;
+	padding: 13px;
+	color: white;
+}
+
+
+li:hover div {
+	display: block;
+}
+
+
+</style>
+</head>
+<body>
+	<ul>
+		<li class="dropdown"><a href="#home">HOME</a>
+			<div class="dropdown-content">
+				<a href="#">HOME 1</a> <a href="#">HOME 2</a> <a href="#">HOME 3</a>
+			</div></li>
+		<li class="dropdown"><a href="#news">News</a>
+			<div class="dropdown-content">
+				<a href="#">News 1</a> <a href="#">News 2</a> <a href="#">News 3</a>
+			</div></li>
+		<li class="dropdown"><a href="#link" class="dropbtn">Dropdown</a>
+			<div class="dropdown-content">
+				<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+			</div></li>
+	</ul>
+</body>
+</html>
