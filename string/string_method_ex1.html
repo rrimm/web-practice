@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 객체</title>
+
+</head>
+<body>
+	<h1>String 객체</h1>
+
+	<script>
+		var str = "abcDEFabc";
+
+		document.write(str.indexOf('abc') + "<br>");
+		document.write(str.indexOf('abcd') + "<br>");
+		document.write(str.indexOf('abc', 3) + "<br><br>");	// 3위치이후로 abc 찾아 위치 반환
+
+		document.write(str.lastIndexOf('abc') + "<br>");
+		document.write(str.lastIndexOf('d') + "<br>");
+		document.write(str.lastIndexOf('c') + "<br><br>");
+
+		document.write(str.charAt(0) + "<br>");
+		document.write(str.slice(2, 6) + "<br>");	// 2위치부터 6바로 전까지 추출
+		document.write(str.slice(-4, -2) + "<br>");	//오른쪽에서 부터 역순으로 추출
+		document.write(str.slice(2) + "<br>");
+		document.write(str.substring(2, 6) + "<br>");
+		document.write(str.substr(2, 4) + "<br><br>");	// 2위치부터 4개 추출
+
+		var str2 = "자바스크립트는 너무 멋져요! 그리고 유용해요.";
+		document.write(str2.split() + "<br>");
+		document.write(str2.split("") + "<br>");	// 문자 한개씩
+		document.write(str2.split(" ") + "<br>");	// 공백 기준
+		document.write(str2.split("!") + "<br><br>"); 	// ! 기준
+
+		var res = str2.split(" ");
+		for (let i = 0; i < res.length; i++) {
+			document.write(res[i] + "<br>");
+		}
+
+		var str4 = "자바스크립트";
+		document.write(str4.concat("는 너무 멋져요!") + "<br><br>");
+
+		var str5 = "JavaScript";
+		document.write(str5.toUpperCase() + "<br>");
+		document.write(str5.toLowerCase() + "<br>");
+
+		var str6 = "       JavaScript       ";
+		document.write("##" + str6.trim() + "##");
+	</script>
+</body>
+</html>

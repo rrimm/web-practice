@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Float</title>
+<script>
+    // 객체를 선언합니다.
+    var person = {
+        name: '윤인성',
+        eat: function (food) { // 메서드
+            alert(this.name + '이 ' + food + '을/를 먹습니다.');	// this키워드 없을 시 에러 발생
+        }
+    };
+
+    person.eat('밥');	// 메서드 호출
+    alert(person.name);	// 속성 호출
+    alert(person["name"]);
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>splice</title>
+
+</head>
+<body>
+	<h1>splice() 메소드</h1>
+
+	<script>
+		var arr = [ 1, true, "JavaScript", "자바스크립트" ];
+
+		var removeElement = arr.splice(1, 2, false, "C언어", "Java");	// 1: 새로운 데이터 추가 위치, 2: 삭제할 데이터 개수 1위치부터 2개 삭제 후 남은 데이터를 삽입
+
+		document.write(arr + "<br>");
+		document.write(removeElement); 
+	</script>
+</body>
+</html>
