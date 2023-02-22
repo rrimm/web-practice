@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function jumin_check() {
+		var str1 = document.input_form.ju1.value;
+		var str2 = document.input_form.ju2.value;
+		var str = str1 + str2;
+
+		if (isNaN(parseInt(str))) {	// 숫자인지 확인
+			alert("숫자가 아님");
+			document.input_form.ju1.focus();
+			return;
+		}
+		if (str1.length !== 6 || str2.length !== 7) {	// 개수 확인
+			alert("개수 부적합");
+			document.input_form.ju1.focus();
+			return;
+		}
+
+		var verifnum = [ 2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5 ];
+		var sum = 0;
+		
+		
+		for (let i = 0; i < verifnum.length; i++) {
+			let num = str.charAt(i);
+			sum += parseInt(num) * verifnum[i];
+		}
+		
+		var tot = 11 - (sum % 11);
+		if (tot === 10) {
+			tot = 0;
+		}
+		if (tot === 11) {
+			tot = 1;
+		}
+		// 입력 주민번호 예시: 123456-1222331
+		if (tot != parseInt(str.charAt(12))) {
+			alert("주민번호 양식에 맞지 않음");
+			document.input_form.ju1.focus();
+		} else {
+			alert("입력한 주민번호: " + str1 + "-" + str2);
+			
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="input_form" action="jumin_check.jsp" method="post">
+		<input type="text" size="6" maxlength="6" name="ju1"> - 
+		<input type="text" size="7" maxlength="7" name="ju2"> 
+		<input type="button" value="체크" onclick="jumin_check()">
+
+	</form>
+</body>
+</html>
