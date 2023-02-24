@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Event Object</title>
+<script>
+	window.onload = function(event) { // event 생성 시 event라는 객체 자동 생성
+		console.log("이 이벤트의 타입은 "
+					+ event.type + "이며, 이벤트의 대상은 " + event.target + "입니다.");
+		var btn = document.getElementById("btn");
+		btn.addEventListener("click", clickBtn);	// addEventListener: event 등록 시 사용. clickBtn: callback함수
+		function clickBtn(event) {
+			document.getElementById("text").innerHTML = "이 이벤트의 타입은 "
+					+ event.type + "이며, 이벤트의 대상은 " + event.target + "입니다.";
+
+		}
+	};
+</script>
+</head>
+<body>
+	<h1>이벤트 객체</h1>
+	<button id="btn">눌러보세요!</button>
+	<p id="text"></p>
+</body>
+</html>

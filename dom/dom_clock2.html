@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Clock</title>
+<script>
+	// 이벤트를 연결합니다.
+	var res;
+	window.onload = function() {
+		// 변수를 선언합니다.
+		var clock = document.getElementById('clock'); // 문서객체 활용하여 시간표시(시간 정지가 가능하도록)
+
+		// 1초마다 함수를 실행합니다.
+		res = setInterval(function() { // 함수 자체를 파라미터로. callback함수로 전달
+			var now = new Date(); // 현재 시스템의 날짜 시간 now에 저장
+			clock.innerHTML = now.toString();
+
+		}, 1000); // 1초 간격으로
+	};
+
+	function timeStop() {
+		clearInterval(res);
+	}
+</script>
+</head>
+<body>
+	<h1 id="clock"></h1>
+	<input type="button" onclick="timeStop()" value="시간정지" />
+</body>
+</html>
