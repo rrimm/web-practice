@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function increase(number) {
+    const promise = new Promise((resolve, reject) => {
+      // resolve는 성공, reject는 실패
+      setTimeout(() => {
+        const result = number + 10;
+        if (result > 50) { // 50보다 높으면 에러 발생시키기
+          const e = new Error('NumberTooBig');
+                  return reject(e);
+        }
+              resolve(result); // number 값에 +10 후 성공 처리
+      }, 1000)
+    });
+    return promise;
+    }
+     
+    async function runTasks() {	// 비동기방식으로 수행하도록 함수 설계
+    try { // try/catch 구문을 사용하여 에러를 처리합니다.
+      let result = await increase(0);	// await를 통해서 promise의 리턴값을 전달받을 때까지 기다리도록 설계
+      console.log(result);
+      result = await increase(result);
+      console.log(result);
+      result = await increase(result);
+      console.log(result);
+      result = await increase(result);
+      console.log(result);
+      result = await increase(result);
+      console.log(result);
+      result = await increase(result);
+      console.log(result);
+    } catch (e) {
+      console.log(e);
+    }
+    }
+</script>
+</body>
+</html>
