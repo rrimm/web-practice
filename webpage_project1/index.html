@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>여행 기록</title>
+</head>
+<style>
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	width: 100%;
+	overflow: hidden;
+	background-color: #A2A4FF;
+}
+
+/* nav { */
+/* background: #A2A4FF; */
+/* width: 100%; */
+/* } */
+body {
+	font-family: 'Cafe24Ssurround';
+	margin: 15px auto;
+	overflow: scroll;
+	background: white;
+}
+
+p {
+	margin: 0 0 15px 20px;
+}
+
+p, li {
+	line-height: 25px;
+}
+
+li {
+	list-style: none;
+}
+
+
+li a, .dropbtn { /* a태그에 다 적용 */
+	display: block;
+	color: black;
+	
+	padding: 14px 20px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #FFEEA8;
+	color: #689EFC;
+}
+
+
+
+#page_header h1 {
+	
+	
+	margin-bottom: 20px;
+	color: #A2A4FF;
+	font-size: 40px;
+	padding: 30px;
+
+}
+
+
+#page_header nav ul li {
+	font-size: 20px;
+	float: left;
+
+	
+}
+
+#sidebar ul li {
+	padding: 0 0 0 5px;
+}
+
+#page_header nav ul li, #page_footer nav ul li {
+	padding: 0;
+	margin: 0 30px 0 0;
+	
+}
+
+/* #page_header nav { */
+/*     display: flex; */
+/*     justify-content: center; */
+/* } */
+
+
+li.dropdown {
+	display: block;
+}
+
+/* 하위메뉴 */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 100px;
+	box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	text-align: left;
+	text-decoration: none;
+	border: 1px black;
+	display: block;
+	padding: 12px 16px;
+}
+
+.dropdown-content a:hover { /* 하위메뉴에 마우스 올릴 시 */
+	background-color: #ECEDFF;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+#page_footer nav ul li {
+	float: left;
+}
+
+section#posts {
+	width: 100%;
+	float: left;
+	line-height: 40px;
+	text-align: justify;
+	background: #F8F8BC;
+	margin-top: 50px;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+footer#page_footer {
+	clear: both;
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding: 40px 0 0 0;
+	color: white;
+	}
+	
+	
+	.mySlides {
+	/* 초기설정: 숨김 */
+	display: none;
+}
+
+img {
+	vertical-align: middle;
+}
+
+.slideshow-container {
+	max-width: 400px;
+	max-height: 300px;
+	position: relative;
+	margin: auto;
+}
+
+/* Caption text */
+.text {
+	color: #F6CEF5;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+/* Number text */
+.numbertext {
+	color: red;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+/* The dots */
+.dot {
+	height: 15px;
+	width: 15px;
+	margin: 0px 0px 2px 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease; /* 젼환 시 방식 */
+}
+
+.active {
+	background-color: #6668F9; /* 활성화되는 dot 항목 */
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade777;
+	animation-duration: 2s;
+}
+
+/* 모바일 화면 글자 크기 조정 */
+@media only screen and (max-width: 600px) {
+	.text {
+		font-size: 11px
+	}
+}
+
+h2{
+padding:20px;
+}
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.3.js"></script>
+<script>
+	$(document).ready(function() {
+		var slideIndex = -1;
+		showSlides();
+
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex >= slides.length) {
+				slideIndex = 0;
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", ""); /* 클래스 이름을 공백으로 전환. 모든 dot을 연한 회색으로 표기 */
+			}
+			slides[slideIndex].style.display = "block";
+			dots[slideIndex].className += " active"; /* 4개의 요소 중 1개만 active 적용 */
+			setTimeout(showSlides, 2000);
+		}
+	});
+	
+	function moveToBerlin() {
+		 location.href = "page_berlin.html";
+		}
+	function moveToCologne() {
+		 location.href = "page_cologne.html";
+		}
+	function moveToMunchen() {
+		 location.href = "page_munchen.html";
+		}
+	function moveToSaintgallen() {
+		 location.href = "page_saintgallen.html";
+		}
+	function moveToInteraken() {
+		 location.href = "page_interaken.html";
+		}
+	function moveToGrindelwald() {
+		 location.href = "page_grindelwald.html";
+		}
+	function moveToJungfrau() {
+		 location.href = "page_jungfrau.html";
+		}
+	function moveToMurren() {
+		 location.href = "page_murren.html";
+		}
+	function moveToVenice() {
+		 location.href = "page_venice.html";
+		}
+	function moveToFerrara() {
+		 location.href = "page_ferrara.html";
+		}
+	function moveToVerona() {
+		 location.href = "page_verona.html";
+		}
+	function moveToRoma() {
+		 location.href = "page_roma.html";
+		}
+	function moveToVatican() {
+		 location.href = "page_vatican.html";
+		}
+	function moveToNice() {
+		 location.href = "page_nice.html";
+		}
+	function moveToBarcelona() {
+		 location.href = "page_barcelona.html";
+		}
+	
+	
+</script>
+
+<body>
+	<div class="head">
+		<header id="page_header">
+			<h1>나의 여행 일지</h1>
+			<!-- 		메인메뉴 -->
+			<nav>
+				<ul>
+					<li class="dropdown"><a href="#home">독일</a>
+						<div class="dropdown-content">
+							<a href="#" onclick="moveToBerlin()">베를린</a> 
+							<a href="#" onclick="moveToCologne()">쾰른</a> 
+							<a href="#" onclick="moveToMunchen()">뮌헨</a> 
+							
+						</div></li>
+					<li class="dropdown"><a href="#news">스위스</a>
+						<div class="dropdown-content">
+							<a href="#" onclick="moveToSaintgallen()">장크트갈렌</a> 
+							<a href="#" onclick="moveToInteraken()">인터라켄</a> 
+							<a href="#" onclick="moveToGrindelwald()">그린델발트</a>
+							<a href="#" onclick="moveToJungfrau()">융프라우</a> 
+							<a href="#" onclick="moveToMurren()">뮈렌</a>
+						</div></li>
+					<li class="dropdown">
+					<a href="#link" class="dropbtn">이탈리아</a>
+						<div class="dropdown-content">
+							<a href="#" onclick="moveToVenice()">베네치아</a> 
+							<a href="#" onclick="moveToFerrara()">페라라</a> 
+							<a href="#" onclick="moveToVerona()">베로나</a> 
+							<a href="#" onclick="moveToRoma()">로마</a>
+						</div>
+					</li>
+					<li class="dropdown">
+					<a href="#link" class="dropbtn" onclick="moveToVatican()">바티칸</a>
+						<div class="dropdown-content"></div>
+					</li>
+					<li class="dropdown">
+					<a href="#link" class="dropbtn">프랑스</a>
+						<div class="dropdown-content">
+							<a href="#" onclick="moveToNice()">니스</a>
+						</div>
+					</li>
+					<li class="dropdown">
+					<a href="#link" class="dropbtn">스페인</a>
+						<div class="dropdown-content">
+							<a href="#" onclick="moveToBarcelona()">바르셀로나</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<section id="posts">
+		<article class="post">
+			<header>
+				<h2>간단한 소개</h2>
+
+			</header>
+
+			<p>2022년 6월 16일 ~ 2022년 7월 12일 사이의 여행 사진입니다. </p>
+			<p></p>
+				
+			<div class="slideshow-container">
+		<div class="mySlides fade">
+			<div class="numbertext">1 / 4</div>
+			<img src="roma/roma1.jpg" width="400px" height="300px">
+			<div class="text">로마</div>
+		</div>
+		<div class="mySlides fade">
+			<div class="numbertext">2 / 4</div>
+			<img src="berlin/berlin1.jpg" width="400px" height="300px">
+			<div class="text">베를린</div>
+		</div>
+		<div class="mySlides fade">
+			<div class="numbertext">3 / 4</div>
+			<img src="grindelwald/grindelwald1.jpg" width="400px" height="300px">
+			<div class="text">그린델발트</div>
+		</div>
+		<div class="mySlides fade">
+			<div class="numbertext">4 / 4</div>
+			<img src="nice/nice1.jpg" width="400px" height="300px">
+			<div class="text">니스</div>
+		</div>
+	</div>
+	<br>
+	<div style="text-align: center">
+		<span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+		<span class="dot"></span>
+	</div>
+	
+		</article>
+	</section>
+ 	
+	<footer id="page_footer">
+		<p>2023 HTML CSS JAVASCRIPT 활용 과제1</p>
+		<nav>
+			<ul>
+				<li></li>
+			</ul>
+		</nav>
+	</footer>
+</body>
+
+</html>
